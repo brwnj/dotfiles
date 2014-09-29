@@ -1,6 +1,6 @@
 " Use the Solarized Dark theme
 set background=dark
-colorscheme solarized
+colorscheme dante
 
 " Make Vim more useful
 set nocompatible
@@ -103,3 +103,33 @@ if has("autocmd")
 	" Treat .md files as Markdown
 	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
+
+filetype on
+let python_highlight_all=1
+" syntax highlighing
+syntax on
+" enable loading indent file for filetype
+filetype plugin indent on
+
+" Keep indentation level from previous line:
+set autoindent
+set expandtab
+au BufRead,BufNewFile *.c, *.h, *Makefile* set noexpandtab
+
+highlight BadWhitespace ctermbg=red guibg=red
+" Display tabs at the beginning of a line in Python mode as bad.
+au BufRead,BufNewFile *.py,*.pyx match BadWhitespace /^\t\+/
+" Make trailing whitespace be flagged as bad.
+au BufRead,BufNewFile * match BadWhitespace /\s\+$/
+
+" Tell vim to remember certain things when we exit
+" "  '10 : marks will be remembered for up to 10 previously edited files
+" "  "100 : will save up to 100 lines for each register
+" "  :20 : up to 20 lines of command-line history will be remembered
+" "  % : saves and restores the buffer list
+" "  n... : where to save the viminfo files
+set viminfo='10,\"100,:20,%,n~/.viminfo
+
+" jump to last know position in file:
+" http://vimdoc.sourceforge.net/htmldoc/eval.html#last-position-jump
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
