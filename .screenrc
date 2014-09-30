@@ -6,3 +6,9 @@ defscrollback 32000
 
 # Always start `screen` with UTF-8 enabled (`screen -U`)
 defutf8 on
+
+vbell off
+
+# screen Status line
+hardstatus alwayslastline
+hardstatus string '%{= kG}%{C}Screen: %{c}%{= kG}[%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{C} %d-%m %{W}%c %{g}]'
