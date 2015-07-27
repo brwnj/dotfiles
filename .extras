@@ -1,24 +1,9 @@
 alias igv="java -Dapple.laf.useScreenMenuBar=true -Xmx4000m -jar ~/opt/igv/igv.jar"
-alias zcat='gunzip -c'
 alias fixlines='perl -pi -e "s/\r/\n/g"'
 alias excel="open -a /Applications/Microsoft\ Office\ 2011/Microsoft\ Excel.app"
 
 function sort-bed(){
     LC_ALL=C sort -k1,1 -k2,2n --buffer-size 2300000 "$@"
-}
-
-sync_garmin(){
-    newdir=converted_garmin_activities
-    mkdir $newdir
-    cd $newdir
-    for activity in `find /Volumes/*/*/Activities/* -name *.fit`; do
-        filename=`basename $activity`
-        gpsbabel -i garmin_fit -f $activity -o gpx -F ${filename/.fit/.gpx}
-    done
-}
-
-readcount(){
-    echo $(awk -cfastx '{print $name}' $1 | wc -l)
 }
 
 # Git credentials
@@ -28,4 +13,3 @@ git config --global user.name "$GIT_AUTHOR_NAME"
 GIT_AUTHOR_EMAIL="brwnjm@gmail.com"
 GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 git config --global user.email "$GIT_AUTHOR_EMAIL"
-
