@@ -115,3 +115,11 @@ Suggestions/improvements
 * [Haralan Dobrev](http://hkdobrev.com/)
 
 * anyone who [contributed a patch](https://github.com/mathiasbynens/dotfiles/contributors) or [made a helpful suggestion](https://github.com/mathiasbynens/dotfiles/issues)
+
+## Update Terminal Cursor
+
+```
+sudo mv /Applications/Utilities/Terminal.app/Contents/Resources/ShadowedIBeam.tiff /Applications/Utilities/Terminal.app/Contents/Resources/ShadowedIBeam.tiff.bak
+sudo cp ibeam.png /Applications/Utilities/Terminal.app/Contents/Resources/ShadowedIBeam.tiff
+defaults write com.apple.Terminal UseCustomIBeamCursor -bool YES
+```
