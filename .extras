@@ -1,4 +1,5 @@
 alias fixlines='perl -pi -e "s/\r/\n/g"'
+alias removeblank="sed -i .bak -e 's/^ *//' -e 's/ *$//' -e '/^$/d' -e '/^\s*$/d'"
 
 function sort-bed(){
     LC_ALL=C sort -k1,1 -k2,2n --buffer-size 2300000 "$@"
