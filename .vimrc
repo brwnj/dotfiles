@@ -1,7 +1,7 @@
 " Use the Solarized Dark theme
+syntax enable
 set background=dark
-colorscheme solarized
-let g:solarized_termtrans=1
+colorscheme dante
 
 " Make Vim more useful
 set nocompatible
@@ -44,8 +44,6 @@ set secure
 set number
 " Enable syntax highlighting
 syntax on
-" Highlight current line
-set cursorline
 " Make tabs as wide as FOUR spaces
 set tabstop=4
 " Show “invisible” characters
@@ -59,8 +57,6 @@ set ignorecase
 set incsearch
 " Always show status line
 set laststatus=2
-" Enable mouse in all modes
-set mouse=a
 " Disable error bells
 set noerrorbells
 " Don’t reset cursor to start of line when moving around.
