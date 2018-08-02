@@ -1,17 +1,10 @@
-alias igv="java -Dapple.laf.useScreenMenuBar=true -Xmx4000m -jar ~/opt/igv/igv.jar"
 alias fixlines='perl -pi -e "s/\r/\n/g"'
 alias removeblank="sed -i .bak -e 's/^ *//' -e 's/ *$//' -e '/^$/d' -e '/^\s*$/d'"
-alias excel="open -a /Applications/Microsoft\ Office\ 2011/Microsoft\ Excel.app"
-
-function sort-bed(){
-    LC_ALL=C sort -k1,1 -k2,2n --buffer-size 2300000 "$@"
-}
 
 # Git credentials
 GIT_AUTHOR_NAME="Joe Brown"
 GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
 git config --global user.name "$GIT_AUTHOR_NAME"
-GIT_AUTHOR_EMAIL="brwnjm@gmail.com"
+GIT_AUTHOR_EMAIL="brown@pm.me"
 GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 git config --global user.email "$GIT_AUTHOR_EMAIL"
-
