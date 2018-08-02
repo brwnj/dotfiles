@@ -146,7 +146,6 @@ alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v exten
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 # Reload the shell (i.e. invoke as a login shell)
-<<<<<<< HEAD
 alias reload="exec $SHELL -l"
 
 # Faster npm for Europeans
@@ -158,9 +157,3 @@ alias zless="zless -X"
 
 alias q="exit"
 alias zcat="gunzip -c"
-=======
-alias reload="exec ${SHELL} -l"
-
-# Print each PATH entry on a separate line
-alias path='echo -e ${PATH//:/\\n}'
->>>>>>> mathiasbynens/master
